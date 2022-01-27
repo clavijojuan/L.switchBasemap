@@ -29,7 +29,7 @@ An easy way to implement control to switch between basemaps
 ```javascript
 new L.basemapsSwitcher([
   {
-    layer: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map),
+    layer: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map), //DEFAULT MAP
     icon: './assets/images/streets.PNG',
     name: 'Streets'
   },
