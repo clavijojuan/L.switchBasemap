@@ -1,7 +1,8 @@
 # L.switchBasemap
 An easy leaflet plugin to switch basemap
 
-![image](https://user-images.githubusercontent.com/57905996/151394503-ee33793b-1d6e-4160-847e-ae854269728f.png)
+![image](https://user-images.githubusercontent.com/57905996/151415980-efef5fd8-6a97-4a05-b69c-cfd09c830edc.png)
+
 
 Based and inspired on [Leaflet-IconLayers](https://github.com/ScanEx/Leaflet-IconLayers)
 
@@ -29,19 +30,25 @@ An easy way to implement control to switch between basemaps
 ```javascript
 new L.basemapsSwitcher([
   {
-    layer: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map), //DEFAULT MAP
-    icon: './assets/images/streets.PNG',
-    name: 'Streets'
+    layer: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map), //DEFAULT MAP
+    icon: './assets/images/img1.PNG',
+    name: 'Map one'
   },
   {
-    layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
-    icon: './assets/images/satelital.PNG',
-    name: 'Satelital'
+    layer: L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',{
+      attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+    }),
+    icon: './assets/images/img2.PNG',
+    name: 'Map two'
   },
   {
-    layer: L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'),
-    icon: './assets/images/dark.PNG',
-    name: 'Dark'
+    layer: L.tileLayer('//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    }),
+    icon: './assets/images/img3.PNG',
+    name: 'Map three'
   },
 ], { position: 'topright' }).addTo(map);
 
