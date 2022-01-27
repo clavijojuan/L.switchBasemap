@@ -1,16 +1,17 @@
 # L.switchBasemap
 An easy leaflet plugin to switch basemap
 
-![image]()
+![image](https://user-images.githubusercontent.com/57905996/151394503-ee33793b-1d6e-4160-847e-ae854269728f.png)
 
-### [DEMO](https://vibrant-perlman-43d7a4.netlify.app/)
+Based and inspired on [Leaflet-IconLayers](https://github.com/ScanEx/Leaflet-IconLayers)
+
+### [DEMO](https://elegant-meninsky-515912.netlify.app)
 
 -----------------------------------------------------------------------------------
 ## Requirements
 
 <ul>
   <li>Leaflet</li>
-  <li>Some Font Icons</li>
 </ul>
 
 ## Install
@@ -18,72 +19,48 @@ An easy leaflet plugin to switch basemap
 ### NPM
 
 ```
-npm i leaflet-cascade-buttons
+npm i leaflet-switch-basemap
 ```  
 
 ## Usage Example
 
-Easy way to implements buttons with cascade subgroup buttons where each one can have it functionality.
+An easy way to implement control to switch between basemaps
 
 ```javascript
-new L.cascadeButtons([
-    {icon: 'fas fa-home', direction:'horizontal', ignoreActiveState:true , command: () =>{console.log('test') }},
-    {icon: 'fas fa-home', direction:'horizontal', items:[
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-    ]},
-    {icon: 'fas fa-home', direction:'horizontal', items: [
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-        {icon: 'fas fa-home', command: () =>{console.log('test')}},
-    ]},
-], {position:'topleft', direction:'vertical'}).addTo(map);
+new L.basemapsSwitcher([
+  {
+    layer: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map),
+    icon: './assets/images/streets.PNG',
+    name: 'Streets'
+  },
+  {
+    layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
+    icon: './assets/images/satelital.PNG',
+    name: 'Satelital'
+  },
+  {
+    layer: L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'),
+    icon: './assets/images/dark.PNG',
+    name: 'Dark'
+  },
+], { position: 'topright' }).addTo(map);
 
 ```
-L.cascadeButtons receives two arguments:
+L.switchBasemap receives two arguments:
 <ul>
-  <li>The first is an array that contains every parent button and it children's.</li>
+  <li>The first is an array of objects that contains basemap configs</li>
   <li>The second is an object with control options</li>
 </ul>
 
-### Parent properties
+### Basemap config
 
-| Property | Type   | Default  | Description                         |
+| Property | Type   | Required  | Description                         |
 | ------------|--- | -------- | ----------------------------------------- |
-| icon     | String | null     | Icon class of Font Icon             |
-| direction| String |'Vertical'| Direction of stacked childs Buttons. Options: 'Vertical' and 'Horizontal' |
-| ignoreActiveState | Boolean  | false | Flag boolean to ignore clicked button style |
-| command  | Function | null or (expand or collapse if button has childs)   | Function to execute when button is clicked |
-| items    | Child properties[] | null | Array of child properties |
-
-### Child properties
-
-| Property | Type   | Default  | Description                         |
-| ------------|--- | -------- | ----------------------------------------- |
-| icon     | String | null     | Icon class of Font Icon             |
-| command  | Function | null or (expand or collapse if button has childs)   | Function to execute when button is clicked |
+| layer     | Leaflet layer | true     | A leaflet layer that can be used as basemap (example: L.tileLayer)            |
+| icon | String |true| Path of the Image that will be display on the control |
+| name | String  | true | Name of the layer |
 
 ### Options
 | Option	  | Type | Default  | Description                       |
 | ------------|--- | -------- | ----------------------------------------- |
-| position	  |String | 'bottomright'    | Position of the control. Options: [leaflet control positions](https://docs.eegeo.com/eegeo.js/v0.1.665/docs/leaflet/L.Control/#control-positions) |
-| direction   |String     | 'horizontal'    | Stacked direction. Options: 'Vertical' and 'Horizontal' |
-| className	  |String | ''       | className to customize control |
-
-
-## Font Icons
-Can be used with any font icon / custom library like:
-
-<ul>
-  <li>font awesome</li>
-  <li>boostrap icons</li>
-  <li>primeIcons</li>
-  <li>custom</li>
-</ul>
+| position	  |String | 'topright'    | Position of the control. Options: [leaflet control positions](https://docs.eegeo.com/eegeo.js/v0.1.665/docs/leaflet/L.Control/#control-positions) |
