@@ -7,7 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "leaflet"
+    "leaflet",
+    "basemaps",
+    "control",
+    "leaflet-switch-basemap",
+    "map",
+    "javascript",
+    "webgis",
+    "webmapping",
+    "leaflet-control"
   ],
   "author": "Juan Camilo Clavijo Sandoval",
   "license": "MIT"
