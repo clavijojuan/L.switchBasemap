@@ -1,0 +1,14 @@
+{
+  "name": "leaflet-switch-basemap",
+  "version": "1.0.0",
+  "description": "An easy leaflet plugin to switch basemap",
+  "main": "./src/L.switchBasemap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "leaflet"
+  ],
+  "author": "Juan Camilo Clavijo Sandoval",
+  "license": "MIT"
+}
