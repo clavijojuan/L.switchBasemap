@@ -1,8 +1,7 @@
 # L.switchBasemap
 An easy leaflet plugin to switch basemap
 
-![image](https://user-images.githubusercontent.com/57905996/151415980-efef5fd8-6a97-4a05-b69c-cfd09c830edc.png)
-
+![image](https://user-images.githubusercontent.com/57905996/151420799-7781dae6-0692-4010-af5d-4b1c0eef3628.png)
 
 Based and inspired on [Leaflet-IconLayers](https://github.com/ScanEx/Leaflet-IconLayers)
 
@@ -44,8 +43,8 @@ new L.basemapsSwitcher([
     name: 'Map two'
   },
   {
-    layer: L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    layer: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
     }),
     icon: './assets/images/img3.PNG',
     name: 'Map three'
