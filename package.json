@@ -1,6 +1,6 @@
 {
   "name": "leaflet-switch-basemap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An easy leaflet plugin to switch basemap",
   "main": "./src/L.switchBasemap.js",
   "scripts": {
