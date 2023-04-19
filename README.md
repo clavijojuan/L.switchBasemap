@@ -70,3 +70,10 @@ L.switchBasemap receives two arguments:
 | Option	  | Type | Default  | Description                       |
 | ------------|--- | -------- | ----------------------------------------- |
 | position	  |String | 'topright'    | Position of the control. Options: [leaflet control positions](https://docs.eegeo.com/eegeo.js/v0.1.665/docs/leaflet/L.Control/#control-positions) |
+
+
+### Events
+
+| Name	  | Description                       |
+| ------------| ----------------------------------------- |
+| basemapChange	  | Fired when user change basemap selection |
